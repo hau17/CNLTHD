@@ -1,0 +1,62 @@
+﻿Statistical profiling result from isolate-000001A709BC5000-25896-v8.log, (10 ticks, 0 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+      5   50.0%          C:\Program Files\nodejs\node.exe
+      3   30.0%          C:\Windows\SYSTEM32\ntdll.dll
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      1   10.0%   50.0%  JS: *countPrimes C:\Users\sonvuuu\Desktop\CNLTHD\learning\chap10_profiling_performance_log\heavyTask.js.js:11:21
+      1   10.0%   50.0%  Builtin: CallFunction_ReceiverIsNotNullOrUndefined
+
+ [C++]:
+   ticks  total  nonlib   name
+
+ [Summary]:
+   ticks  total  nonlib   name
+      2   20.0%  100.0%  JavaScript
+      0    0.0%    0.0%  C++
+      0    0.0%    0.0%  GC
+      8   80.0%          Shared libraries
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+      5   50.0%  C:\Program Files\nodejs\node.exe
+      2   40.0%    C:\Program Files\nodejs\node.exe
+      1   50.0%      JS: ~Duplex node:internal/streams/duplex:64:16
+      1  100.0%        JS: ~Socket node:net:362:16
+      1  100.0%          JS: ~WriteStream node:tty:88:21
+      1  100.0%            Builtin: CallApiCallbackGeneric
+      1   50.0%      JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      1   20.0%    JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      1  100.0%      JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      1  100.0%        JS: ~<anonymous> node:tty:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+
+      3   30.0%  C:\Windows\SYSTEM32\ntdll.dll
+      1   33.3%    JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      1  100.0%      JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      1  100.0%        JS: ~<anonymous> node:internal/streams/duplex:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      1   33.3%    C:\Program Files\nodejs\node.exe
+      1  100.0%      JS: ~<anonymous> node:internal/main/run_main_module:1:1
+
+      1   10.0%  JS: *countPrimes C:\Users\sonvuuu\Desktop\CNLTHD\learning\chap10_profiling_performance_log\heavyTask.js.js:11:21
+      1  100.0%    JS: ~<anonymous> C:\Users\sonvuuu\Desktop\CNLTHD\learning\chap10_profiling_performance_log\heavyTask.js.js:1:1
+      1  100.0%      JS: ~<anonymous> node:internal/main/run_main_module:1:1
+
+      1   10.0%  Builtin: CallFunction_ReceiverIsNotNullOrUndefined
+      1  100.0%    JS: ^countPrimes C:\Users\sonvuuu\Desktop\CNLTHD\learning\chap10_profiling_performance_log\heavyTask.js.js:11:21
+      1  100.0%      JS: ~<anonymous> C:\Users\sonvuuu\Desktop\CNLTHD\learning\chap10_profiling_performance_log\heavyTask.js.js:1:1
+      1  100.0%        JS: ~<anonymous> node:internal/main/run_main_module:1:1
+
